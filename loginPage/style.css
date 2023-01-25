@@ -1,0 +1,145 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vh;
+    background: rgb(130,167,219);
+    background: linear-gradient(149deg, rgba(130,167,219,1) 0%, rgba(179,252,227,1) 100%);
+} 
+
+.login{
+    font-size: 28px;
+    font-weight: 600;
+    position: absolute;
+    top: 4%;
+    left: 7%;
+}
+
+.login::before{ /* linha embaixo do nome */
+    content: ""; /* sempre colocar no inicio */
+    width: 27px;
+    height: 3px;
+    background-color: rgb(112, 148, 240);
+    position: absolute;
+    bottom: 0px;
+    left: 2px;
+}
+
+.conteiner{
+    height: 450px;
+    width: 430px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 3px 5px 20px #000;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    top: 50%;  left: 50%;  transform: translate(-50%, -50%);
+}
+
+.input{
+    margin-top: 20px;
+}
+
+#email, #password {
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 350px;
+    background-color: transparent;
+    padding: 0px 1em 0px 2.65em; /*afasta o placeholder*/
+    border-bottom:  2px solid rgb(66, 111, 246);
+    margin: 0;
+}
+
+#email:focus, #password:focus {
+    border:  2px solid rgb(66, 111, 246);
+    border-radius: 5px;
+}
+
+.l-icons, #open, #close{
+    position: absolute;
+    height: 25px;
+    width: 25px;
+}
+
+.l-icons{
+    margin-left: 5px;
+}
+
+
+#close{
+    display: none;
+}
+
+.pass-icns{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: 75px;
+    cursor: pointer;
+} 
+
+.input-em, .input-pass {
+    width: 350px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+} 
+
+.end{
+    max-width: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(66, 111, 246);
+    transition: color 0.5s;
+}
+
+a:hover{
+    color: rgb(79, 224, 174); 
+}
+
+.lgn-btn{
+    width: 350px;
+    height: 50px;
+    background-color:rgb(66, 111, 246);
+    border-radius: 5px;
+    border: 0px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35px ;
+    left: 50%;  transform: translate(-50%);
+    color: white;
+    font-size: 20px;
+    transition: background 0.5s;
+}
+
+.lgn-btn:hover{
+    background-color: rgb(112, 148, 240);
+}
+
+.create-acc{
+    font-size: 16px;
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
