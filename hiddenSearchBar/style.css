@@ -1,0 +1,67 @@
+:root{
+    --body-color: #e4e9f7;
+    --header-color: #82a7db;
+    --text-color: #fff; 
+    --text-color-high: #171917;
+    --primary-color: #f6f5ff;
+}
+
+body.dark{
+    --body-color: #18191a;
+    --header-color: #3a3b3c;
+    --text-color: #ccc; 
+    --text-color-high: #fff;
+    --primary-color: #606163;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+body{
+    background-color: var(--body-color);
+    transition: 0.5s;
+}
+
+.conteiner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    background: var(--header-color);
+    transition: 0.5s;
+}
+
+.conteiner .menu-list{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+
+.conteiner .mode-search{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: var(--text-color);
+    font-size: 20px;
+    cursor: pointer;
+}
+.conteiner .mode-search .modemoon,
+.search .close,
+.conteiner .search .search-inp.hidden {
+    display: none;
+}
+
+.conteiner .search .search-inp{
+    position: absolute;
+    top: 80px;
+    right: 20px;
+}
