@@ -4,7 +4,11 @@ const body = document.querySelector("body"),
       searchBtn = body.querySelector(".search-box"),
       modeSwitch = body.querySelector(".toggle-switch"),
       modeText = body.querySelector(".mode-text");
-      Image = body.querySelector("#icn");
+
+      let getMode = localStorage.getItem("mode")
+        if(getMode && getMode === "dark-mode"){
+            body.classList.add("dark");
+            }      
 
       toggle.addEventListener("click", () =>{
         sidebar.classList.toggle("close");
@@ -18,7 +22,14 @@ const body = document.querySelector("body"),
         body.classList.toggle("dark");
         if (body.classList.contains("dark")){
             modeText.innerHTML = "Light Mode";
-            return
+        }else{
+          modeText.innerHTML = "Dark Mode";
         }
-        modeText.innerHTML = "Dark Mode";
+        
+        if (!body.classList.contains("dark")){
+          localStorage.setItem("mode" , "light-mode");
+      }else{
+          localStorage.setItem("mode" , "dark-mode");
+      }
+
 });

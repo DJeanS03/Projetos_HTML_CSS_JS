@@ -4,6 +4,7 @@
     --text-color: #fff; 
     --text-color-high: #171917;
     --primary-color: #f6f5ff;
+    --side-nav: #010717;
 }
 
 body.dark{
@@ -12,6 +13,7 @@ body.dark{
     --text-color: #ccc; 
     --text-color-high: #fff;
     --primary-color: #606163;
+    --side-nav: #606163;
 }
 
 *{
@@ -20,6 +22,11 @@ body.dark{
     box-sizing: border-box;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
+}
+
+a{
+    text-decoration: none;
+    color: var(--text-color);
 }
 
 body{
@@ -37,31 +44,171 @@ body{
 }
 
 .conteiner .menu-list{
-    display: flex;
+    display: flex; 
     align-items: center;
     list-style: none;
-    gap: 1rem;
+    gap: 2rem;
     color: var(--text-color);
     cursor: pointer;
 }
 
+.conteiner .menu-list li a{ 
+    position: relative;
+    font-size: 17px;
+}
+
+.menu-list li a::before {  /* bolinha embaixo dos links / hover */
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+.menu-list li:hover a::before{
+    opacity: 1;
+}
+
+.conteiner .sidebarOpen{
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    display: none;
+}
 
 .conteiner .mode-search{
     display: flex;
     align-items: center;
+    line-height: 0; /* ajuda a alinhar com mais precisão */
     gap: 2rem;
     color: var(--text-color);
     font-size: 20px;
     cursor: pointer;
+    transition: all 2s ease;
 }
-.conteiner .mode-search .modemoon,
-.search .close,
-.conteiner .search .search-inp.hidden {
+
+
+.search.hidden .serch-icns .search-Icn,
+.search .serch-icns .close,
+body.dark .conteiner .mode-search .dark-light .modesun{
+    display: block;
+}
+
+.conteiner .menu .logo-toggle,
+.search .serch-icns .search-Icn,
+.conteiner .mode-search .dark-light .modesun,
+.search.hidden .serch-icns .close,
+body.dark .conteiner .mode-search .dark-light .modemoon{
     display: none;
 }
 
-.conteiner .search .search-inp{
+.search.hidden .search-inp{
+    top: 15px;
+    opacity: 0.2;
+}
+
+header .search-inp{
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    background: var(--header-color);
+    padding: 3px;
+    border-radius: 6px;
     position: absolute;
     top: 80px;
     right: 20px;
+    transition: all .5s ease;
+    z-index: -1;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .search-inp::before{ /* entalhe do input */
+    content: "";
+    position: absolute;
+    right: 14px;
+    top: -4px;
+    width: 12px;
+    height: 12px;
+    background: var(--header-color);
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+header .search-inp input{
+    height: 100%;
+    width: 100%;
+    padding: 0 45px 0 15px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--text-color-high);
+    background-color: var(--primary-color);
+}
+
+header .search-inp i{
+    position: absolute;
+    right: 15px;
+    color: var(--header-color);
+    font-size: 22px;
+}
+
+.search-Icn.hidden{
+    display: none;
+}
+
+.icon{
+    cursor: pointer;
+}
+
+@media (max-width: 790px){
+    .conteiner .sidebarOpen{
+        display: block;
+    }
+
+    .conteiner .menu{
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;      
+        background: var(--side-nav);
+        color: var(--text-color);
+        padding: 20px;
+        z-index: 100;
+        transition: all .4s ease;
+    }
+
+    .conteiner .menu.active{
+        left: -0%;
+    }
+
+    .conteiner .menu .logo-toggle{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .menu  .sidebarClose{
+        color: var(--text-color);
+        font-size: 24px;
+    }
+
+    .conteiner .menu .menu-list{
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .conteiner .menu-list li a{
+      display: block;
+      margin-top: 20px;  
+    }
 }
