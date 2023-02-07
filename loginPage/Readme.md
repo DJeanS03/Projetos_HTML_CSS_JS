@@ -12,3 +12,7 @@ versions:
 1.5.2 Adição de efeitos visuais nas caixas e nos links<br>
 1.5.3 Criação do script para veriicar se todos os campos foram preenchidos e a 'checkbox' dos termos marcada<br>
 1.5.4 Atualização no script para verificação de senha condizentes <br>
+1.5.5 Implementação de 'pattern' para email e senha  <br>
+1.5.6 Adição de bordas vermelhas e mensagem de erro caso a os campos não atendam aos padrões <br>
+1.5.7 Implementação de dados de usuários criados no localStorage <br>
+1.6.7 Adição de bordas vermelhas e mensagem de erro caso a os campos não atendam aos padrões ou não estejam cadastrados no localStorage <br>

@@ -49,7 +49,7 @@ body{
     margin-top: 20px;
 }
 
-#email, #password {
+.email, .password {
     border: none;
     outline: none;
     height: 40px;
@@ -60,23 +60,25 @@ body{
     margin: 0;
 }
 
-#email:focus, #password:focus {
+.email:focus, .password:focus {
     border:  2px solid rgb(66, 111, 246);
     border-radius: 5px;
 }
 
-.l-icons, #open, #close{
-    position: absolute;
-    height: 25px;
-    width: 25px;
-}
-
 .l-icons{
+    position: absolute;
     margin-left: 5px;
+    font-size: 1.5rem;
+    color:  rgb(66, 111, 246);
+}
+
+.bx-show, .bx-hide{
+    font-size: 1.3rem;
+    color:  rgb(66, 111, 246);
 }
 
 
-#close{
+.bx-hide{
     display: none;
 }
 
@@ -84,13 +86,20 @@ body{
     position: absolute;
     display: flex;
     align-items: center;
-    right: 75px;
+    right: 55px;
     cursor: pointer;
-} 
+}
+
+.msg-error-email, .msg-error-pass{
+    margin-left: 30px;
+    color: #ff0000;
+    margin-bottom: 20px;
+    font-size: 14px;
+    display: flex;  
+}
 
 .input-em, .input-pass {
     width: 350px;
-    margin-bottom: 30px;
     display: flex;
     align-items: center;
     margin-left: 30px;

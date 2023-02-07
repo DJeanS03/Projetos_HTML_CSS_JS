@@ -31,7 +31,14 @@ body{
     left: 2px;
 }
 
-.conteiner{
+.text_success{
+    position: absolute;
+    top: 13%;
+    left: 7%;
+    color: #00d400;
+}
+
+.container{
     height: 550px;
     width: 430px;
     padding: 10px;
@@ -48,7 +55,7 @@ body{
     margin-top: 50px;
 }
 
-#email, #name, #password, #confirm-password {
+.email, .name, .password, .cfm-password {
     border: none;
     outline: none;
     height: 40px;
@@ -59,53 +66,58 @@ body{
     margin: 0;
 }
 
-#name:focus, #email:focus, #password:focus, #confirm-password:focus {
+.name:focus, .email:focus, .password:focus, .cfm-password:focus {
     border:  2px solid rgb(66, 111, 246);
     border-radius: 5px;
 }
 
 .l-icons{
     position: absolute;
-    height: 25px;
-    width: 25px;
     margin-left: 5px;
+    font-size: 1.5rem;
+    color:  rgb(66, 111, 246);
 }
 
-#open, #close{
-    position: absolute;
-    height: 30px;
-    width: 30px;
+.show, .show-cfm, .hide, .hide-cfm{
+    font-size: 1.3rem;
+    color:  rgb(66, 111, 246);
 }
 
-#openP, #closeP{
-    position: absolute;
-    height: 30px;
-    width: 30px;
+.hide, .hide-cfm{
+    display: none;
+}
+
+.msg-error-name, .msg-error-email, .msg-error-pass, .msg-error-cfmP{
+    margin-left: 30px;
+    color: #ff0000;
+    margin-bottom: 20px;
+    font-size: 14px;
+    display: flex;  
+}
+
+.msg-error-checkbox{
+    margin-left: 135px;
 }
 
 .input-nm, .input-em, .input-pass, .input-pass-cnf {
     width: 350px;
-    margin-bottom: 25px;
+
     display: flex;
     align-items: center;
     margin-left: 30px;
 }
 
-#close, #closeP{
-    display: none;
-}
-
-.pass-icns, .pass-icns1{
+.pass-icns, .pass-icnsC{
     position: absolute;
     display: flex;
     align-items: center;
-    right: 75px;
+    right: 50px;
     cursor: pointer;
 }
 
 .terms, .login{
     font-size: 16px;
-    padding-top: 10px;
+    padding-top: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -132,7 +144,7 @@ a:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 35px ;
+    margin-top: 30px ;
     left: 50%;  transform: translate(-50%);
     color: white;
     font-size: 20px;
@@ -142,3 +154,10 @@ a:hover{
 .rgt-btn:hover{
     background-color: rgb(112, 148, 240); 
 }
+
+/* .bxs-check-circle{
+    position: absolute;
+    right: 60px;
+    color: green;
+    display: none;
+} */
